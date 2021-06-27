@@ -1,0 +1,7 @@
+env/
+.vscode/
+test.txt
+telegram.db
+__pycache__
+.env
+statistics_bot/__pycache__
