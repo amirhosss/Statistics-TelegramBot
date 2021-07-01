@@ -7,7 +7,7 @@ def start(bot, message):
     users = session.query(User).filter_by(chat_id=message.chat.id).first()
     
     if users == None:
-        user = User(chat_id=message.chat.id)
+        user = User(chat_id=message.chat.id, username=message.chat.username)
         session.add(user)
         session.commit()
     
