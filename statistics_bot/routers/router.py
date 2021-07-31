@@ -16,10 +16,10 @@ async def get_message(request: Request):
     return 200
     
 
-@router.get('/')
-def webhook():
+@router.get('/setwebhook')
+async def webhook():
     main.bot.remove_webhook()
-    main.bot.set_webhook(url=WEBHOOK_URL + main.TOKEN)
+    await main.bot.set_webhook(url=WEBHOOK_URL + main.TOKEN)
     return "!", 200
     
 
