@@ -1,6 +1,7 @@
 import os
 import statistics_bot.main as main
 
+from typing import Dict
 from pydantic import BaseModel
 from fastapi import APIRouter, Request, responses
 from telebot import types
@@ -11,7 +12,7 @@ router = APIRouter()
 
 class Item(BaseModel):
     update_id: int
-    message: types.Message
+    message: Dict
 
 @router.post('/' + main.TOKEN)
 def get_message(request: Item):
