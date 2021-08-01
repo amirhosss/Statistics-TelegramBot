@@ -8,4 +8,5 @@ requests==2.25.1
 scipy==1.6.3
 SQLAlchemy==1.4.17
 starlette==0.14.2
+uvicorn==0.13.4
 
