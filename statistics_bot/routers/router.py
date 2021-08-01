@@ -11,9 +11,10 @@ router = APIRouter()
 @router.post('/' + main.TOKEN)
 async def get_message(request: Request):
     json_string = await request.json()
+    print(json_string)
     update = types.Update.de_json(json_string)
     main.bot.process_new_updates([update])
-    return json_string
+    return 200
     
 
 @router.get('/setwebhook')
