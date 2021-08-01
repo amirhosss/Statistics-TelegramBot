@@ -63,12 +63,6 @@ def alpha_handler(message):
     return handlers.alpha(bot, message)
 
 
-@bot.message_handler(func=lambda msg: True, content_types=['text'])
-@register_required
-def input_handler(message):
-    return handlers.input(bot, message)
-
-
 @bot.message_handler(regexp='(^/d(1[0-9]|[1-9])$)')
 @register_required
 def set_digits(message):
@@ -111,3 +105,8 @@ def tests_calculator(message):
 def variance_calculator(message):
     return cls.variance(bot, message)
 
+
+@bot.message_handler(func=lambda msg: True, content_types=['text'])
+@register_required
+def input_handler(message):
+    return handlers.input(bot, message)
