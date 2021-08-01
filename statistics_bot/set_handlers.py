@@ -39,3 +39,15 @@ def plot(bot, message):
         bot.reply_to(message, f'Plot mode is {condition[user.plot_mode]}', reply_markup=markup)
     else:
         bot.reply_to(message, 'Nothing changed', reply_markup=markup)
+
+
+def admin(bot, message):
+    user = session.query(User).filter_by(chat_id=message.chat.id).first()
+
+    if user.chat_id == 529241259:
+        user_all = session.query(User).all()
+
+        for user in user_all:
+            bot.send_message(user.chat_id, message.text.split('/Admin ')[1])
+    else:
+        bot.reply_to(message, 'Sorry you are not admin')
