@@ -10,7 +10,7 @@ router = APIRouter()
 
 @router.post('/' + main.TOKEN)
 def get_message(request: Request):
-    json_string = request.json()
+    json_string = request.json().cr_await()
     #update = types.Update.de_json(json_string)
     #main.bot.process_new_updates([update])
     return json_string
