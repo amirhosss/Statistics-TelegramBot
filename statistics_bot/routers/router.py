@@ -16,8 +16,8 @@ class Item(BaseModel):
 
 @router.post('/' + main.TOKEN)
 def get_message(request: Item):
-    print(request.dict)
-    update = types.Update.de_json(request.dict)
+    print(request.json)
+    update = types.Update.de_json(request.json)
     main.bot.process_new_updates([update])
     return 200
     
