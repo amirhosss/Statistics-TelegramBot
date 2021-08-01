@@ -1,6 +1,7 @@
 import os
 import statistics_bot.main as main
 
+from pydantic import BaseModel
 from fastapi import APIRouter, Request, responses
 from telebot import types
 
@@ -8,11 +9,14 @@ WEBHOOK_URL = os.environ.get('WEBHOOK_URL')
 
 router = APIRouter()
 
+class Item(BaseModel):
+    update_id: int
+    message: types.Message
+
 @router.post('/' + main.TOKEN)
-async def get_message(request: Request):
-    json_string = await request.json()
-    print(json_string)
-    update = types.Update.de_json(json_string)
+def get_message(request: Item):
+    print(request)
+    update = types.Update.de_json(request)
     main.bot.process_new_updates([update])
     return 200
     
