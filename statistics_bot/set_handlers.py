@@ -48,6 +48,9 @@ def admin(bot, message):
         user_all = session.query(User).all()
 
         for user in user_all:
-            bot.send_message(user.chat_id, message.text.split('/Admin ')[1])
+            try:
+                bot.send_message(user.chat_id, message.text.split('/Admin ')[1])
+            except Exception as e:
+                print(f'An error caused: {e}')
     else:
         bot.reply_to(message, 'Sorry you are not admin')
