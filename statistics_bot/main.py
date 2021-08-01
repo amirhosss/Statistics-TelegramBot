@@ -10,7 +10,7 @@ load_dotenv()
 TOKEN = os.environ.get('TOKEN')
 
 # Create bot instance
-bot = telebot.TeleBot(TOKEN)
+bot = telebot.TeleBot(TOKEN, threaded=False)
 
 # Create server
 app = FastAPI(docs_url=None, redoc_url=None)
