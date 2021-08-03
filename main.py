@@ -88,7 +88,7 @@ def set_admin_handler(message):
     return set.admin(bot, message)
 
 
-@bot.message_handler(regexp='(^ni? [+-]?([0-9]*[.])?[0-9]+$)|(^ti? [+-]?([0-9]*[.])?[0-9]+ [1-9][0-9]*$)')
+@bot.message_handler(regexp='(^n[.]i?sf [+-]?([0-9]*[.])?[0-9]+$)|(^t[.]i?sf [+-]?([0-9]*[.])?[0-9]+ [1-9][0-9]*$)')
 @register_required
 def distribution_calculator(message):
     return cls.distribution(bot, message)
