@@ -62,7 +62,7 @@ def tests(bot, message):
     if sigma_s > 0:
         _param = (x_bar-mu)*sqrt(n)/sigma_s
 
-        bot.reply_to(message, f'Param_value = {round(_param, user.digits)}')
+        bot.reply_to(message, f'Statistic value = {round(_param, user.digits)}')
 
         if method == 'ntest':
 
@@ -116,8 +116,38 @@ def tests(bot, message):
                     bot.reply_to(message, 'The null hypothesis can be accepted \u2705')
                 else:
                     bot.reply_to(message, 'The null hypothesis cannot be accepted \u274C')
+
     else:
         bot.reply_to(message, '\u03C3 or S cannot be 0')
+
+
+def test_samp(bot, message):
+    _input = message.text.lower().split(' ')
+
+    sample = [float(num) for num in _input[1:-2]]
+    mu = float(_input[-2])
+    alternative = _input[-1]
+
+    condition = {'<': 'less', '=': 'two-sided', '>': 'greater'}
+
+    user = session.query(User).filter_by(chat_id=message.chat.id).first()
+
+    if mu != 0:
+        ans = st.ttest_1samp(sample, mu, alternative=condition[alternative])
+
+        statistic_value = ans[0]
+        p_value = ans[1]
+
+        bot.reply_to(message, f'Statistic value = {round(statistic_value, user.digits)}\n'
+                            + f'p_value = {round(p_value, user.digits)}')
+        
+        if user.alpha < p_value:
+            bot.reply_to(message, 'The null hypothesis can be accepted \u2705')
+        else:
+            bot.reply_to(message, 'The null hypothesis cannot be accepted \u274C')
+
+    else:
+        bot.reply_to(message, '\u00B5 cannot be 0')
 
 
 def variance(bot, message):
