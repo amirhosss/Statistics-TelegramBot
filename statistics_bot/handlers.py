@@ -22,9 +22,10 @@ def help(bot, message):
                  + '&#x1F4CA Normal. Survival function\ne.g. (x = 1):\n<b>n.sf 1</b>\n' 
                  + '&#x1F4CA t-student. Inverse survival function\ne.g. (&#x3b1 = 0.05, &#x3bd = 9):\n<b>t.isf 0.05 9</b>\n'
                  + '&#x1F4CA t-student. Survival function\ne.g. (x = 1, v = 9):\n<b>t.sf 1 9</b>\n'
-                 + '&#x1F4A1 Are you misunderstanding? Click <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda362.htm">here.</a>\n\n' 
+                 + '&#x1F4A1 Are you misunderstanding? Click <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda362.htm">here</a>.\n\n' 
                  + '&#x1F4C8 Normal test\ne.g. (X&#x305 = 14, &#x3BC = 13, &#x3C3 = 2, n = 10, (H&#x2081: &#x3BC&gt&#x3BC&#x2080) = &gt):\n<b>ntest 14 13 2 10 &gt</b>\n'
-                 + '&#x1F4C8 t test\ne.g. (X&#x305 = 14, &#x3BC = 13, S = 2, n = 10, (H&#x2081: &#x3BC&lt&#x3BC &#x2080) = &lt):\n<b>ttest 14 13 2 10 &lt</b>\n\n'
+                 + '&#x1F4C8 t test\ne.g. (X&#x305 = 14, &#x3BC = 13, S = 2, n = 10, (H&#x2081: &#x3BC&lt&#x3BC &#x2080) = &lt):\n<b>ttest 14 13 2 10 &lt</b>\n'
+                 + '&#x1F4C8 t test with sample\ne.g. (X&#x2080=5, X&#x2081=42 ..., X&#x2099=70, &#x3BC = 13, (H&#x2081: &#x3BC&gt&#x3BC&#x2080) = &gt):\n<b>ttest.samp 5 42 ... 70 13 &gt</b>\n\n'
                  + '&#x1F527 Send /plot to change the plot mode\n(default: on)\n' 
                  + '&#x1F527 Send /alpha to set the alpha_value for hypothesis tests\n(default: 0.05)\n' 
                  + '&#x1F527 Send /digits to set digits for\nanswers (default: 6)', 
