@@ -53,7 +53,8 @@ def admin(bot, message):
 
         for user in user_all:
             try:
-                bot.send_message(user.chat_id, message.text.lower().split('/admin ')[1])
+                bot.send_message(user.chat_id, message.text.lower().split('/admin ')[1], 
+                                 disable_notification=False)
             except Exception as e:
                 print(f'An error caused: {e}')
     else:
