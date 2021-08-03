@@ -16,19 +16,19 @@ def distribution(bot, message):
     dist = [float(_dist) for _dist in dist[1:]]
     dist.insert(0, distribution)
 
-    if distribution == 'n':
+    if distribution == 'n.sf':
         ans = st.norm.sf(float(dist[1]))
         data = [dist[1], st.norm.pdf(dist[1])]
 
-    elif distribution == 'ni':
+    elif distribution == 'n.isf':
         ans = st.norm.isf(float(dist[1]))
         data = [ans, st.norm.pdf(ans)]
 
-    elif distribution == 't':
+    elif distribution == 't.sf':
         ans = st.t.sf(float(dist[1]), float(dist[2]))
         data = [dist[1], st.t.pdf(dist[1], dist[2])]
 
-    elif distribution == 'ti':
+    elif distribution == 't.isf':
         ans = st.t.isf(float(dist[1]), float(dist[2]))
         data = [ans, st.t.pdf(ans, dist[2])]
     
