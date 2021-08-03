@@ -46,9 +46,9 @@ def plot(bot, message):
 def admin(bot, message):
     user = session.query(User).filter_by(chat_id=message.chat.id).first()
     
-    admin_chatId = os.environ.get('CHAT_ID')
+    CHAT_ID = int(os.environ.get('CHAT_ID'))
 
-    if user.chat_id == admin_chatId:
+    if user.chat_id == CHAT_ID:
         user_all = session.query(User).all()
 
         for user in user_all:
