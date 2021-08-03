@@ -100,13 +100,13 @@ def tests_calculator(message):
     return cls.tests(bot, message)
 
 
-@bot.message_handler(regexp='^(ttest([.]samp)) ([+-]?([0-9]*[.])?[0-9]+ )+ [<=>]$')
+@bot.message_handler(regexp='^(ttest[.]samp)( [+-]?([0-9]*[.])?[0-9]+)+ [<=>]$')
 @register_required
 def tests_samp_calculator(message):
     return cls.test_samp(bot, message)
 
 
-@bot.message_handler(regexp='^v( ([0-9]*[.])?[0-9]+)+$')
+@bot.message_handler(regexp='^v( [+-]?([0-9]*[.])?[0-9]+)+$')
 @register_required
 def variance_calculator(message):
     return cls.variance(bot, message)
