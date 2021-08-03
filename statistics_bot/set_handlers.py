@@ -47,13 +47,13 @@ def admin(bot, message):
     user = session.query(User).filter_by(chat_id=message.chat.id).first()
     
     CHAT_ID = int(os.environ.get('CHAT_ID'))
-    print(CHAT_ID)
+
     if user.chat_id == CHAT_ID:
         user_all = session.query(User).all()
 
         for user in user_all:
             try:
-                bot.send_message(user.chat_id, message.text.split('/Admin ')[1])
+                bot.send_message(user.chat_id, message.text.lower().split('/admin ')[1])
             except Exception as e:
                 print(f'An error caused: {e}')
     else:
