@@ -44,7 +44,7 @@ def chart_api(distribution, data, param=0):
         return response.content, message
 
     except Exception as e:
-        message.append(f'Raise an exception while fetching : {e} \u1F61E')
+        message.append(f'Raise an exception while fetching : {e} \U0001F61E')
         
         return None, message
 
