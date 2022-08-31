@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
 # Create engine
-DATABASE_URL = os.environ.get('DATABASE_URL').replace('postgres', 'postgresql')
+DATABASE_URL = os.environ.get('DATABASE_URL')
 engine = create_engine(DATABASE_URL, 
                        echo=False)
 
