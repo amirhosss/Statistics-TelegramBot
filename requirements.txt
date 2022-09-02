@@ -1,12 +1,11 @@
+scipy
+numpy
 fastapi==0.65.2
-numpy==1.20.3
 psycopg2-binary==2.9.1
 pydantic==1.8.2
 pyTelegramBotAPI==3.7.9
 python-dotenv==0.18.0
 requests==2.25.1
-scipy==1.6.3
 SQLAlchemy==1.4.17
 starlette==0.14.2
 uvicorn==0.13.4
-
