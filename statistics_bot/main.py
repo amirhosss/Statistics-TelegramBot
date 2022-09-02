@@ -1,21 +1,16 @@
-import os
 import telebot
 
+import config
+
 from fastapi import FastAPI
-from dotenv import load_dotenv
 
-
-# Get bot token from enviroment configs
-load_dotenv()
-TOKEN = os.environ.get('TOKEN')
 
 # Create bot instance
-bot = telebot.TeleBot(TOKEN, threaded=False)
+bot = telebot.TeleBot(config.TOKEN, threaded=False)
 
 # Create server
-app = FastAPI(docs_url=None, redoc_url=None)
+if config.SERVER_MODE == 'production':
+    app = FastAPI(docs_url=None, redoc_url=None)
 
-import statistics_bot.routers.router as router
-
-app.include_router(router.router)
-
+    import statistics_bot.routers.router as router
+    app.include_router(router.router)
