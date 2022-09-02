@@ -1,5 +1,7 @@
 import os
 
+import config
+
 from .models import User
 from .database import session
 from telebot import types
@@ -45,10 +47,8 @@ def plot(bot, message):
 
 def admin(bot, message):
     user = session.query(User).filter_by(chat_id=message.chat.id).first()
-    
-    CHAT_ID = int(os.environ.get('CHAT_ID'))
 
-    if user.chat_id == CHAT_ID:
+    if user.chat_id == config.ADMIN_CHAT_ID:
         user_all = session.query(User).all()
 
         for user in user_all:

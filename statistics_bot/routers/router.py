@@ -1,10 +1,11 @@
 import os
+
+import config
 import statistics_bot.main as main
 
-from fastapi import APIRouter, Request, responses
+from fastapi import APIRouter, Request
 from telebot import types
 
-WEBHOOK_URL = os.environ.get('WEBHOOK_URL')
 
 router = APIRouter()
 
@@ -20,7 +21,7 @@ async def get_message(request: Request):
 @router.get('/setwebhook')
 def webhook():
     main.bot.remove_webhook()
-    main.bot.set_webhook(url=WEBHOOK_URL + main.TOKEN)
+    main.bot.set_webhook(url=config.WEBHOOK_URL + main.TOKEN)
     return '!', 200
     
 
