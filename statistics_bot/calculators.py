@@ -161,4 +161,3 @@ def variance(bot, message):
     user = session.query(User).filter_by(chat_id=message.chat.id).first()
 
     bot.reply_to(message, f'Answer = {round(ans, user.digits) if type(ans)!=str else ans}')
-
