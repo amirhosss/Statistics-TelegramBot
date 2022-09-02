@@ -5,3 +5,4 @@ telegram.db
 __pycache__
 .env
 statistics_bot/__pycache__
+config.py
