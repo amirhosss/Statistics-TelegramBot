@@ -1,4 +1,4 @@
-env/
+venv/
 .vscode/
 test.txt
 telegram.db
