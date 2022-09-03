@@ -1,5 +1,3 @@
-import os
-
 import config
 import statistics_bot.main as main
 
@@ -10,7 +8,7 @@ from telebot import types
 router = APIRouter()
 
 
-@router.post('/' + main.TOKEN)
+@router.post('/' + config.TOKEN)
 async def get_message(request: Request):
     json_string = await request.json()
     update = types.Update.de_json(json_string)
