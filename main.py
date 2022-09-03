@@ -1,7 +1,6 @@
-import telebot
-import uvicorn
 import os
 
+import config
 import statistics_bot.handlers as handlers
 import statistics_bot.set_handlers as set
 import statistics_bot.calculators as cls
@@ -14,8 +13,11 @@ from statistics_bot.database import engine, session
 from functools import wraps
 
 
-# Initialize bot, app , token
-bot, app, TOKEN = main.bot, main.app, main.TOKEN
+# Initialize bot, token
+bot, TOKEN = main.bot, config.TOKEN
+
+if config.SERVER_MODE == 'production':
+    app = main.app
 
 # Create all tables
 Base.metadata.create_all(engine)
@@ -116,3 +118,9 @@ def variance_calculator(message):
 @register_required
 def input_handler(message):
     return handlers.input(bot, message)
+
+
+if __name__ == '__main__':
+    if config.SERVER_MODE == 'test':
+        bot.delete_webhook()
+        bot.polling()
