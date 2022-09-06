@@ -4,6 +4,6 @@ ADMIN_CHAT_ID = ''
 
 DATABASE_URL = ''
 
-SERVER_MODE = ''
+SERVER_MODE = '' #"test" Or "production"
 
 WEBHOOK_URL = ''
