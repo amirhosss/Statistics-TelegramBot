@@ -1,0 +1,9 @@
+TOKEN = ''
+
+ADMIN_CHAT_ID = ''
+
+DATABASE_URL = ''
+
+SERVER_MODE = ''
+
+WEBHOOK_URL = ''
