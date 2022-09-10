@@ -126,4 +126,4 @@ if __name__ == '__main__':
         bot.delete_webhook()
         bot.polling()
     else:
-        uvicorn.run('main:app', port=8000, host='0.0.0.0')
+        uvicorn.run('main:app', port=8000)
