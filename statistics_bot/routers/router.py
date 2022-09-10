@@ -19,7 +19,7 @@ async def get_message(request: Request):
 @router.get('/setwebhook')
 def webhook():
     main.bot.remove_webhook()
-    main.bot.set_webhook(url=config.WEBHOOK_URL + main.TOKEN)
+    main.bot.set_webhook(url=config.WEBHOOK_URL + config.TOKEN)
     return '!', 200
     
 
