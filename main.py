@@ -1,5 +1,6 @@
 import os
 
+import uvicorn
 import config
 import statistics_bot.handlers as handlers
 import statistics_bot.set_handlers as set
@@ -124,3 +125,5 @@ if __name__ == '__main__':
     if config.SERVER_MODE == 'test':
         bot.delete_webhook()
         bot.polling()
+    else:
+        uvicorn.run('main:app', port=8000, host='0.0.0.0')

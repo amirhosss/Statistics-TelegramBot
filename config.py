@@ -10,6 +10,6 @@ ADMIN_CHAT_ID = os.environ.get('ADMIN_CHAT_ID')
 
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
-SERVER_MODE = 'test' #"test" Or "production"
+SERVER_MODE = 'production' #"test" Or "production"
 
 WEBHOOK_URL = os.environ.get('WEBHOOK_URL')
