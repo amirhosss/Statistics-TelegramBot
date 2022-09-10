@@ -1,4 +1,3 @@
-from json import load
 import os
 from dotenv import load_dotenv
 
