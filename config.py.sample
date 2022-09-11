@@ -1,9 +1,0 @@
-TOKEN = '' #Your telegram bot token
-
-ADMIN_CHAT_ID = '' #Admin chat id for admin command
-
-DATABASE_URL = ''
-
-SERVER_MODE = '' #"test" Or "production"
-
-WEBHOOK_URL = ''
